@@ -5,7 +5,6 @@ import reviewRoute from "./review.route.js";
 
 const router = express.Router();
 
-
 router.use("/user", userRoute);
 router.use("/products", productRoute);
 router.use("/reviews", reviewRoute);

@@ -20,20 +20,4 @@ const getReviews = async (req, res) => {
   }
 };
 
-// const getProduct = async (req, res) => {
-//   try {
-//     const { productId } = req.params;
-
-//     const product = await axiosClient.get(`${baseUrl}/products/${productId}`);
-
-//     if (!product) {
-//       res.status(404).send(`product not found`);
-//     }
-
-//     return res.status(200).json(product);
-//   } catch (err) {
-//     console.log(err.message);
-//   }
-// };
-
 export default { getReviews };
