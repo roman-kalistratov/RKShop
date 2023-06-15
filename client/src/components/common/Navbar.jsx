@@ -7,7 +7,6 @@ import Container from "./Container";
 import styles from '../../styles/Navbar.module.scss';
 import { setNavSidebar } from "../../redux/features/navSidebarSlice";
 import { setUser } from "../../redux/features/userSlice";
-import { RiLogoutCircleRLine } from "react-icons/ri";
 import userApi from "../../api/modules/user.api";
 import { toast } from "react-toastify";
 

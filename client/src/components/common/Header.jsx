@@ -32,7 +32,6 @@ const Header = () => {
   const [totalProducts, setTotalProducts] = useState(0);
   const [request, setRequest] = useState({ state: false, id: undefined });
   const [query, setQuery] = useState('');
-  const [isSearchMobile, setIsSearchMobile] = useState(false);
 
   const searchArea = useRef();
   const dispatch = useDispatch();
@@ -114,7 +113,6 @@ const Header = () => {
     setTotalProducts(0);
     setOnSearch(false);
     setQuery('');
-    setIsSearchMobile(false)
   }
 
   const onClose = () => {

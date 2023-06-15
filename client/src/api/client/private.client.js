@@ -10,7 +10,6 @@ const privateClient = axios.create({
   withCredentials: true,
 });
 
-
 //request interceptor
 privateClient.interceptors.request.use(async (config) => {
   return {
@@ -22,7 +21,6 @@ privateClient.interceptors.request.use(async (config) => {
   };
 });
 
-
 //response interceptor
 privateClient.interceptors.response.use(
   (response) => {
@@ -30,7 +28,7 @@ privateClient.interceptors.response.use(
     return response;
   },
   (error) => {
-    const originalRequest = error.config;    
+    const originalRequest = error.config;
 
     // Check if the response status is 401 (Unauthorized)
     if (
@@ -56,7 +54,7 @@ privateClient.interceptors.response.use(
 
           throw error;
         });
-    }else {
+    } else {
       throw error.response.data;
     }
   }

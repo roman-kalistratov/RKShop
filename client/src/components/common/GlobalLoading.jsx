@@ -5,9 +5,6 @@ import Logo from "./Logo";
 const GlobalLoading = () => {
   const { globalLoading } = useSelector((state) => state.globalLoading);
 
-  // const globalLoading = false;
-
-
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {

@@ -26,7 +26,7 @@ const MainLayout = () => {
         const { response, err } = await userApi.auth(user)
         if (response) dispatch(setUser(response));
         if (err) dispatch(setUser(null));
-      }      
+      }
     };
 
     authUser();

@@ -71,11 +71,11 @@ const routes = [
       <ProtectedRoute>
         <FavoriteList />
       </ProtectedRoute>
-    ), 
+    ),
   },
   {
     path: "/store",
-    element: <Store/>
+    element: <Store />
   },
   {
     path: "/checkout",
