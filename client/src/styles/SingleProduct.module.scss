@@ -1,0 +1,263 @@
+@import "./mixins";
+
+.product {
+  @include flex-space-between-start;
+  padding-top: 1rem;
+  gap: 2rem;
+}
+
+.thumbArea {
+  border-radius: 0.3rem;
+  width: 35%;
+  background-color: var(--white);
+  padding-top: 1rem;
+}
+
+.mySwiper2 {
+  height: 60%;
+  width: 100%;
+}
+
+.mySwiper {
+  margin-top: 1rem;
+  background-color: var(--white);
+}
+
+.mySwiper .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.details {
+  flex-grow: 1;
+  border-radius: 0.3rem;
+  background-color: var(--white);
+  padding: 1rem;
+  position: relative;
+
+  & h1 {
+    font-size: 1.5rem;
+    margin: 1.2rem 0;
+    text-transform: capitalize;
+  }
+
+  & p {
+    line-height: 1.2rem;
+    margin: 0.5rem 0;
+  }
+
+  & p b {
+    margin-right: 0.5rem;
+  }
+
+  & p > a {
+    text-decoration: underline !important;
+  }
+}
+
+.loader {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  background-color: var(--white);
+  border: 1px solid var(--grey);
+  padding: 0.3rem;
+  border-radius: 0.3rem;
+  width: 35px;
+}
+
+.detailsTop {
+  @include flex-start;
+  border-bottom: 1px solid var(--grey);
+  padding-bottom: 1rem;
+  font-size: 0.8rem;
+
+  & > span {
+    padding-left: 1rem;
+    font-weight: 500;
+    border-left: 1px solid var(--grey);
+    color: var(--dark-light);
+  }
+
+  & a {
+    margin-left: 0.5rem;
+    color: var(--dark-light);
+  }
+}
+
+.star {
+  margin-right: 1rem;
+}
+
+.price {
+  font-size: 1.1rem;
+
+  & span {
+    font-weight: normal;
+    margin-left: 0.5rem;
+  }
+}
+
+.bottom {
+  border-top: 1px solid var(--grey);
+  font-size: 0.9rem;
+}
+
+.action {
+  @include flex-start;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+
+  & button {
+    margin: 0 !important;
+    margin-left: 1rem !important;
+  }
+}
+
+.qty {
+  line-height: 30px;
+  @include flex-start;
+  text-align: center;
+
+  & input {
+    padding: 10px 0;
+    font-weight: 400;
+    height: 32px;
+    border: 1px solid #e1e1e1;
+    text-align: center;
+    background-color: inherit;
+    width: 60px;
+  }
+
+  & span {
+    width: 40px;
+    height: 32px;
+    font-weight: 400;
+    cursor: pointer;
+    border: 1px solid #e1e1e1;
+
+    &:hover {
+      background-color: var(--grey-light);
+    }
+  }
+}
+
+.btns {
+  flex-grow: 1;
+  display: flex;
+}
+
+.shipping {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: var(--color-1c1c1b);
+  margin-bottom: 0px;
+}
+
+.reviewsArea {
+  overflow-x: hidden;
+  padding-bottom: 1rem;
+}
+
+.header {
+  margin: 0.8rem 0;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    left: 5%;
+    height: 0.2rem;
+    background-color: var(--green);
+  }
+
+  & h2 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+}
+
+.reviews {
+  background-color: var(--white);
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 0.3rem;
+}
+
+.reviewItem {
+  width: 100%;
+
+  padding: 1rem 0;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--grey);
+  }
+  & p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+.reviewItemTop {
+  @include flex-start;
+  gap: 1rem;
+}
+
+@media only screen and (max-width: 885px) {
+  .thumbArea {
+    width: 45%;
+  }
+
+  .btns {
+    justify-content: flex-start;
+    margin-top: 1rem;
+
+    & button {
+      margin: 0 !important;
+
+      &:first-child {
+        margin-right: 1rem !important;
+      }
+    }
+  }
+
+  .header h2 {
+    font-size: 1.7rem;
+    line-height: 2.5rem;
+    margin-left: 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .thumbArea {
+    width: 60%;
+  }
+  .mySwiper {
+    display: none !important;
+  }
+
+  .product {
+    @include flex-center;
+    flex-direction: column;
+  }
+
+  .btns {
+    gap: 2rem;
+  }
+
+  .details {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .thumbArea {
+    width: 70%;
+  }
+}

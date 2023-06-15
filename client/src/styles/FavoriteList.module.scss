@@ -1,0 +1,181 @@
+@import "./mixins";
+
+.favoriteList {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 2rem 0;
+
+  & > p a {
+    text-decoration: underline;
+  }
+}
+
+.header {
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    left: 5%;
+    height: 0.2rem;
+    background-color: var(--green);
+  }
+
+  & span {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.12rem;
+    color: var(--grey);
+    display: block;
+  }
+
+  & h2 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+}
+
+.wrapper {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-top: 1rem;
+}
+
+.item {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.3rem;
+  background-color: var(--white);
+  padding: 1rem;
+  color: red;
+  position: relative;
+
+  & img {
+    min-height: 270px;
+    max-height: 270px;
+    border-radius: 0.3rem;
+    margin: auto;
+  }
+}
+
+.heartIcon {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  background-color: var(--white);
+  padding: 0.5rem;
+  border: 1px solid var(--grey);
+  border-radius: 0.3rem;
+
+  & img {
+    max-height: 1.4rem;
+    min-height: 1.4rem;
+  }
+}
+
+.details {
+  & h6 {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.3rem;
+    color: var(--red);
+    margin: 0.8rem 0;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    flex-grow: 1;
+  }
+
+  & h5 {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+}
+
+.top {
+  @include flex-space-between-center;
+
+  & a svg {
+    color: var(--dark);
+    font-size: 1.5rem;
+    margin-top: 2px;
+  }
+
+  & svg {
+    font-size: 1.4rem;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    color: var(--red);
+  }
+}
+
+.description {
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+  margin-right: 1.5rem;
+  color: var(--dark-light);
+  margin: 0.8rem 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.price {
+  flex-grow: 1;
+  font-size: 1.4rem;
+  color: var(--dark);
+}
+
+.footer {
+  @include flex-space-between-center;
+
+  & span {
+    padding: 0.7rem 1rem;
+    background-color: var(--white);
+    border: 1px solid var(--red);
+    border-radius: 2rem;
+    color: inherit;
+    font-weight: 500;
+    font-size: 0.876rem;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid var(--red);
+      background-color: var(--red);
+      color: var(--white);
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .header h2 {
+    font-size: 1.7rem;
+    line-height: 2rem;
+  }
+
+  .header {
+    margin: 0;
+
+    & span {
+      font-size: 0.6rem;
+      letter-spacing: 0.2rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .item img {
+    min-height: 200px;
+    max-height: 200px;
+  }
+}

@@ -1,0 +1,369 @@
+@import "./mixins";
+
+.header {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg);
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.top {
+  width: 100%;
+  color: white;
+  border-bottom: 1px solid var(--dark-light);
+
+  & p {
+    font-size: 0.9rem;
+    font-weight: 300;
+
+    & a {
+      color: inherit;
+      margin-left: 1rem;
+    }
+  }
+}
+
+.logo {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+
+  & span {
+    color: var(--green);
+    margin-left: 0.5rem;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  @include flex-space-between-center;
+  flex-grow: 1;
+  padding: 1rem 0;
+}
+
+.input {
+  flex-grow: 1;
+  margin: 0 2vw;
+  @include flex-center;
+  position: relative;
+
+  & span {
+    border: 1px solid var(--white);
+    padding: 0.69rem;
+    border-top-right-radius: 0.2rem;
+    border-bottom-right-radius: 0.2rem;
+    font-size: 1.3rem;
+    background-color: var(--green-dark);
+    cursor: pointer;
+    transition: background-color 0.2s linear;
+    color: var(--white);
+
+    &:hover {
+      background-color: var(--bg);
+    }
+  }
+}
+
+.searchArea {
+  position: absolute;
+  left: 0;
+  top: 110%;
+  background-color: var(--grey-light);
+  width: 100%;
+  border-radius: 0.3rem;
+  padding: 1rem;
+  z-index: 9;
+  padding-top: 2rem;
+}
+
+.close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 1.7rem;
+  cursor: pointer;
+  color: var(--grey);
+
+  &:hover {
+    color: var(--grey-dark);
+  }
+}
+
+.searchItem {
+  width: 100%;
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--grey);
+  display: flex;
+  align-items: center;
+
+  & img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+  }
+
+  .loader img {
+    width: 35px;
+    height: 35px;
+  }
+
+  & button {
+    margin: 0 !important;
+    background-color: var(--green-dark) !important;
+    padding: 0.7rem !important;
+
+    &:hover {
+      border-color: transparent !important;
+      color: var(--white) !important;
+    }
+
+    & svg {
+      font-size: 1.4rem;
+    }
+  }
+}
+
+.details {
+  margin-left: 1rem;
+
+  p {
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+  }
+}
+
+.price {
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.account {
+  @include flex-center;
+  cursor: pointer;
+}
+
+.myAccount,
+.favourites,
+.cart {
+  color: var(--white);
+  line-height: 1.3rem;
+}
+
+.myAccount,
+.favourites {
+  margin-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    color: var(--white);
+    font-size: 1.8rem;
+    margin-right: 1rem;
+  }
+}
+
+.myAccount {
+  position: relative;
+}
+
+.dropDown:hover .dropDowMenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(7px);
+}
+
+.dropDowMenu {
+  top: 100%;
+  left: 0px;
+  opacity: 0;
+  margin: 0px;
+  z-index: 2;
+  min-width: 220px;
+  visibility: hidden;
+  position: absolute;
+  background: var(--white);
+  border-radius: 0.3rem;
+  transform: translateY(15px);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 2px 19px 3px rgba(0, 0, 0, 0.08);
+
+  & li {
+    width: 100%;
+    display: block;
+
+    &:last-child {
+      color: var(--dark);
+    }
+  }
+
+  & a,
+  & li:last-child {
+    line-height: 1;
+    padding: 1rem 1.3rem;
+    white-space: nowrap;
+    @include flex-start;
+
+    & svg {
+      color: inherit;
+      font-size: 1.3rem;
+    }
+
+    &:hover {
+      color: inherit;
+      background-color: var(--bg-light);
+    }
+  }
+}
+
+.cart {
+  @include flex-center;
+  padding-left: 1rem;
+  border-left: 1px solid var(--grey);
+  margin-right: 1rem;
+
+  & svg {
+    font-size: 2rem;
+    margin-right: 0.5rem;
+    color: var(--green);
+  }
+}
+
+.badge {
+  @include flex-space-between-center;
+  flex-direction: column;
+
+  & span {
+    width: 100%;
+    text-align: center;
+    background-color: var(--white);
+    border-radius: 0.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark);
+    font-weight: 500;
+  }
+}
+
+.hamburger {
+  color: var(--green);
+  font-size: 2rem;
+  padding: 0 1rem;
+  align-items: center;
+  display: none;
+
+  & svg:first-child {
+    font-size: 1.3rem;
+    margin-right: 1rem;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .top {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+
+  .input {
+    position: absolute;
+    width: 97%;
+    left: -100%;
+    top: 4.5rem;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 2;
+    transition: left 0.3s ease-in-out;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      left: 0;
+    }
+
+    & input {
+      background-color: var(--bg);
+      color: white;
+      border-radius: 0.3rem;
+      font-size: 1rem;
+      padding: 1rem;
+
+      &::placeholder {
+        color: var(--grey);
+      }
+    }
+
+    & span {
+      display: none;
+    }
+  }
+
+  .searchArea {
+    background-color: var(--bg);
+
+    & p {
+      color: var(--white);
+    }
+  }
+
+  .account {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: var(--bg);
+    width: 100%;
+    z-index: 3;
+    justify-content: space-evenly;
+    padding: 1rem 0;
+  }
+
+  .myAccount {
+    margin-left: 0.5rem;
+  }
+
+  .dropDown {
+    pointer-events: none;
+  }
+
+  .favourites {
+    margin-left: 0.5rem;
+  }
+
+  .cart {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .account p {
+    display: none;
+  }
+
+  .cart {
+    position: relative;
+    span {
+      position: absolute;
+      top: -5px;
+      right: -40%;
+      background: none;
+      color: var(--white);
+    }
+  }
+
+  .searchArea {
+    & button {
+      padding: 0.3rem !important;
+    }
+  }
+  .details p {
+    font-size: 0.8rem;
+  }
+  .price {
+    font-size: 0.9rem;
+  }
+}

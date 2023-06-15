@@ -1,0 +1,279 @@
+@import "./mixins";
+
+.checkout {
+  padding: 1rem 0;
+
+  & form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+}
+
+.billing,
+.order {
+  background-color: var(--white);
+  border-radius: 0.3rem;
+  padding: 1rem;
+  overflow-x: hidden;
+}
+
+.billing {
+  flex-basis: 60%;
+
+  & input {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    background-color: var(--grey-light);
+    font-size: 14px;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+
+  & a {
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  & p {
+    font-size: 0.8rem;
+    color: var(--dark-light);
+
+    & a {
+      margin-left: 0.2rem;
+      text-decoration: underline;
+      color: var(--dark-light);
+
+      &:hover {
+        color: var(--dark);
+      }
+    }
+  }
+}
+
+.hasError {
+  border: 1px solid var(--red);
+}
+
+.order {
+  flex-basis: 35%;
+
+  & table {
+    width: 100%;
+  }
+
+  & tbody tr {
+    padding: 0.2rem 0;
+
+    &:last-child {
+      border-bottom: 1px solid #e1e1e1;
+    }
+  }
+
+  & tr {
+    display: flex;
+    justify-content: space-between;
+
+    &.bordered {
+      border-bottom: 1px solid #e1e1e1;
+      padding: 0.5rem 0;
+    }
+  }
+
+  & td,
+  & th {
+    font-size: 16px;
+    font-weight: 400;
+    padding: 0.5rem;
+    text-align: left;
+  }
+
+  & > button {
+    width: 100%;
+  }
+}
+
+.check {
+  line-height: 1.6rem;
+  & input {
+    width: 0.9rem;
+    height: 0.9rem;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+  }
+
+  & label {
+    line-height: 1.8rem;
+    vertical-align: middle;
+  }
+}
+
+.header {
+  margin: 0.8rem 0;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 10%;
+    left: 0;
+    height: 0.2rem;
+    background-color: var(--green);
+  }
+
+  & h2 {
+    font-size: 1.7rem;
+    font-weight: 500;
+    line-height: 2rem;
+  }
+}
+
+.formRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  & input {
+    flex-basis: 48%;
+  }
+}
+
+.formCheck {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0.8rem 0;
+
+  & input {
+    width: auto;
+    margin-right: 0.5rem;
+  }
+}
+
+.differentAddress {
+  margin-top: 1rem;
+}
+
+.coupon {
+  background-color: var(--white);
+  border-radius: 0.3rem;
+  padding: 1rem;
+  position: relative;
+
+  & p {
+    border-bottom: 1px solid var(--border);
+    line-height: 2rem;
+  }
+
+  & span {
+    font-weight: 700;
+    cursor: pointer;
+  }
+}
+
+.close {
+  position: absolute;
+  right: 2%;
+  top: 5%;
+  font-size: 1.4rem;
+  color: var(--grey);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--dark);
+  }
+}
+
+.collapse {
+  background-color: var(--white);
+  transition: all 0.1s linear;
+  visibility: hidden;
+  opacity: 0;
+  max-height: 0;
+
+  & input {
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    width: 30%;
+
+    &::placeholder {
+      color: var(--red);
+      font-weight: 700;
+    }
+  }
+
+  & button {
+    margin: 0 !important;
+    margin-left: 1rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+}
+
+.collapseActive {
+  visibility: visible;
+  opacity: 1;
+  max-height: max-content;
+  padding: 0.5rem 0;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 1rem 0;
+}
+
+.payment {
+  flex-direction: column;
+  & th {
+    margin-top: 0.5rem;
+  }
+  & p {
+    line-height: 1.2rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .checkout form {
+    flex-direction: column;
+  }
+
+  .coupon {
+    padding: 0.5rem 1rem;
+    & form {
+      flex-direction: row;
+    }
+  }
+
+  .header h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .coupon p {
+    font-size: 0.825rem;
+  }
+
+  .order {
+    & td,
+    & th {
+      font-size: 0.9rem;
+    }
+  }
+
+  .collapse {
+    & input {
+      width: 45%;
+      font-size: 0.825rem;
+    }
+    & button {
+      font-size: 0.825rem;
+      padding: 0.5rem 2rem !important;
+    }
+  }
+}
