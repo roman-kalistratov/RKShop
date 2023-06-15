@@ -7,5 +7,4 @@ router.get("/", productController.getProducts);
 router.get("/:productId", productController.getProduct);
 router.get("/search/:query", productController.search);
 
-
 export default router;

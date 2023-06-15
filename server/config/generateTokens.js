@@ -9,17 +9,21 @@ const generateTokens = (payload) => {
   });
   return {
     accessToken,
-    refreshToken
+    refreshToken,
   };
 };
 
 const generateResetToken = (payload) => {
-  const resetToken = JWT.sign(payload, process.env.TOKEN_RESET_PASSWORD_SECRET, {
-    expiresIn: "10m",
-  });
+  const resetToken = JWT.sign(
+    payload,
+    process.env.TOKEN_RESET_PASSWORD_SECRET,
+    {
+      expiresIn: "10m",
+    }
+  );
 
   return {
-    resetToken
+    resetToken,
   };
 };
 

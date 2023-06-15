@@ -17,15 +17,13 @@ const sendEmail = async (to, link) => {
       to,
       subject: "Reset password " + process.env.API_URL,
       text: "",
-      html: `
-                <div>
+      html: `<div>
                     <h1>Hi, Please follow this link to reset Your Password. This link is valid till 10 minutes from now.</h1>
                     <p>If you did not request this, please ignore this email and your password will remain unchanged.</p>
                     <a href="${process.env.CLIENT_URL}/reset-password/${link}">${link}</a>
-                </div>
-            `,
+                </div>`,
     });
-  } catch(err) {
+  } catch (err) {
     throw new Error(err);
   }
 };
