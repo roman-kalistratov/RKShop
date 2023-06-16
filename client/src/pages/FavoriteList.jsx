@@ -36,7 +36,7 @@ const FavoriteList = () => {
         };
 
         getFavorites();
-    }, [dispatch]);
+    }, [dispatch, count]);
 
     const handleRemove = async (productId) => {
         if (request.state) return;

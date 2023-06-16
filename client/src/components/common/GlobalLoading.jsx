@@ -5,7 +5,7 @@ import Logo from "./Logo";
 const GlobalLoading = () => {
   const { globalLoading } = useSelector((state) => state.globalLoading);
 
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (globalLoading) {
@@ -13,7 +13,7 @@ const GlobalLoading = () => {
     } else {
       setTimeout(() => {
         setIsLoading(false);
-      }, 1500);
+      }, 1000);
     }
   }, [globalLoading]);
 

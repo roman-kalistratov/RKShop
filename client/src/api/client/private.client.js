@@ -2,6 +2,7 @@ import axios from "axios";
 import queryString from "query-string";
 
 const baseURL = "https://rk-shop.vercel.app/api/v1/"; //server URL
+// const baseURL = "http://localhost:5000/api/v1/"; //server URL
 const privateClient = axios.create({
   baseURL,
   paramsSerializer: {

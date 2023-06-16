@@ -43,7 +43,7 @@ export const userSlice = createSlice({
         (item) => item.id !== productId
       );
 
-      if (state.listFavorites.products.length === 0) state.cart = null;
+      if (state.listFavorites.products.length === 0) state.listFavorites = null;
     },
   },
 });
