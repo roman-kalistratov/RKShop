@@ -158,17 +158,19 @@ const setCart = async (req, res) => {
 
     // Calculate the total cart value and total with discount
     let cartTotal = 0;
+    let cartCount = 0;
     cart.products.forEach((item) => {
       const { price } = item.product;
       const quantity = item.quantity;
 
       cartTotal += price * quantity;
+      cartCount += quantity;
     });
 
     // Update the cart's total values
     cart.cartTotal = cartTotal;
     cart.totalAfterDiscount = 0;
-    cart.count = cart.products.length;
+    cart.count = cartCount;
 
     await cart.save();
 
@@ -226,17 +228,19 @@ const updateCart = async (req, res) => {
     if (state !== "delete") {
       // Recalculate the total cost of the cart and the cost with the discount
       let cartTotal = 0;
+      let cartCount = 0;
       cart.products.forEach((item) => {
         const { price } = item.product;
         const quantity = item.quantity;
 
         cartTotal += price * quantity;
+        cartCount += quantity;
       });
 
       // Update the values of the total cost of the cart and the cost with the discount
       cart.cartTotal = cartTotal;
       cart.totalAfterDiscount = 0;
-      cart.count = cart.products.length;
+      cart.count = cartCount;
 
       await cart.save();
 
@@ -271,16 +275,18 @@ const deleteItem = async (req, res) => {
 
     // Recalculate the total cost of the cart and the cost with the discount
     let cartTotal = 0;
+    let cartCount = 0;
     cart.products.forEach((item) => {
       const { price } = item.product;
       const quantity = item.quantity;
 
       cartTotal += price * quantity;
+      cartCount += quantity;
     });
 
     // Update the values of the total cost of the cart and the cost with the discount
     cart.cartTotal = cartTotal;
-    cart.count = cart.products.length;
+    cart.count = cartCount;
 
     await cart.save();
 
