@@ -1,4 +1,5 @@
 import axiosClient from "../axios/axios.client.js";
+import axios from 'axios';
 
 const baseUrl = process.env.FAKE_STORE_URL;
 
@@ -13,7 +14,7 @@ const getProducts = async (req, res) => {
       (brand !== "undefined" && brand !== "")
     ) limit = 100;
 
-    const products = await axiosClient.get(
+    const products = await axios.get(
       `${baseUrl}/products?skip=${offset}&limit=${limit}`
     );
 
@@ -22,7 +23,7 @@ const getProducts = async (req, res) => {
     }
 
     // filters
-    let filtered = products;
+   let filtered = products.data;
 
     if (category !== "undefined" && category !== "") {
       filtered = {
