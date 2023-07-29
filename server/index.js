@@ -10,7 +10,13 @@ const app = express();
 
 dbConnect();
 
-app.use(cors({ origin: true, credentials: true }));
+app.use(cors({
+  origin: '*',
+  methods: 'GET, POST, PUT, DELETE, OPTIONS',
+  allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept',
+  credentials: true,
+}));
+
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
