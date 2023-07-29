@@ -26,7 +26,7 @@ const ForgotPassword = () => {
             const { response, err } = await userApi.forgotPassword(values);
 
             if (response) {
-                // navigate('/')
+                navigate('/')
                 toast.success(response);
             }
             if (err) {
