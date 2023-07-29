@@ -102,6 +102,7 @@ const forgotPasswordToken = async (req, res) => {
     await user.save();
 
     sendEmail(email, resetToken);
+    res.redirect('/');
     res.status(200).json("Password reset link is sent to tour email.");
   } catch (err) {
     res.status(500).json("Server side error.");
