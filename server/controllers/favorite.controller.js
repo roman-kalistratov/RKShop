@@ -19,7 +19,7 @@ const addFavorite = async (req, res) => {
 
     // If the product already exists, increase its quantity
     if (!existingProduct) {
-      favorite.products.push(product);
+      favorite.products.push(product)
     } else {
       return res.status(400).json("Product already exist in wishlist");
     }
