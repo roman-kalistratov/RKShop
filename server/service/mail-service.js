@@ -1,28 +1,30 @@
-import nodemailer from "nodemailer";
+import sgMail from "@sendgrid/mail";
 
 const sendEmail = async (to, link) => {
   try {
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: process.env.SMTP_PORT,
-      secure: true,
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASSWORD,
-      },
-    });
+    sgMail.setApiKey(
+      "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"
+    );
 
-    await transporter.sendMail({
-      from: process.env.SMTP_USER,
-      to,
-      subject: "Reset password " + process.env.API_URL,
-      text: "",
+    const msg = {
+      to: to,
+      from: process.env.SMTP_USER, 
+      subject: "Reset Password",
       html: `<div>
-                    <h1>Hi, Please follow this link to reset Your Password. This link is valid till 10 minutes from now.</h1>
-                    <p>If you did not request this, please ignore this email and your password will remain unchanged.</p>
-                    <a href="${process.env.CLIENT_URL}/reset-password/${link}/">${link}</a>
-                </div>`,
-    });
+      <h2>Please follow this link to reset Your Password. This link is valid till 10 minutes from now.</h2>
+      <p>If you did not request this, please ignore this email and your password will remain unchanged.</p>
+      <a href="${process.env.CLIENT_URL}/reset-password/${link}/">${link}</a>
+            </div>`,
+    };
+
+    sgMail
+      .send(msg)
+      .then(() => {
+        console.log("Email sent successfully");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   } catch (err) {
     throw new Error(err);
   }
