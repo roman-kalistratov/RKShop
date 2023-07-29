@@ -11,7 +11,7 @@ const app = express();
 dbConnect();
 
 app.use(cors({
-  origin: '*',
+  origin: true,
   methods: 'GET, POST, PUT, DELETE, OPTIONS',
   allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept',
   credentials: true,
