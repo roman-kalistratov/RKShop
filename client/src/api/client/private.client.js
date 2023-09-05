@@ -42,7 +42,7 @@ privateClient.interceptors.response.use(
 
       // Make a request to refresh the token
       return privateClient
-        .get("http://localhost:5000/api/v1/user/refresh-token")
+        .get(`http://${baseURL}/api/v1/user/refresh-token`)
         .then((response) => {
           localStorage.setItem("accessToken", response.accessToken);
 
