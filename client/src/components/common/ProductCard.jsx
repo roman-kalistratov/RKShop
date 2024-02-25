@@ -99,9 +99,7 @@ const ProductCard = ({ product, children }) => {
           <img src={product.images[0] || product.thumbnail} alt="product__image" />
         </div>
       </Link>
-
-
-
+      
       <div className={styles.details}>
         <div className={styles.header}>
           <h6>{product.category}</h6>

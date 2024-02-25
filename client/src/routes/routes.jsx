@@ -16,6 +16,7 @@ import ThankYouPage from "../pages/ThankYouPage";
 const ProtectedRoute = ({ children }) => {
   const { user } = useSelector((state) => state.user);
   const accessToken = localStorage.getItem("accessToken");
+  
   if (!user && !accessToken) {
     toast.error("Not authorized!")
     return <Navigate to="/login" />;

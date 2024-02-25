@@ -6,6 +6,7 @@ import ProductGrid from '../components/common/ProductGrid'
 import { useDispatch } from "react-redux"
 import { setGlobalLoading } from '../redux/features/globalLoadingSlice'
 import productApi from '../api/modules/product.api'
+import Skeleton from '../components/common/Skeleton'
 
 const offset = 0;
 const limit = 25;
@@ -34,7 +35,7 @@ const Home = () => {
   return (
     <>
       <Container>
-        <HeroSlide />
+        <HeroSlide />      
         <ProductGrid
           products={filteredByRating(products)}
           title="Bestseller Products"
