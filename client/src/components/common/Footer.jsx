@@ -85,9 +85,9 @@ const Footer = () => {
 
       <div className={styles.copyright}>
         Designed & Built by
-        <a href="# ">
+        <Link to="https://www.romank.co.il/" target="_blank">
           <img src='/img/logo_footer.png' alt="logo-rk" />
-        </a>
+        </Link>     
       </div>
     </footer>
   )

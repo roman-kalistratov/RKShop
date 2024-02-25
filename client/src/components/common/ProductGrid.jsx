@@ -22,14 +22,14 @@ const ProductGrid = ({ products, title, subtitle, children, button }) => {
                         {title && <h2>{title}</h2>}
                     </div>)}
 
-                {isLoader && <Skeleton />}
                 {products.length === 0 && <h2>Products Not found </h2>}
 
                 <div className={styles.gridItems}>
-                    {products.map((product, index) => (
-                        <ProductCard key={index} product={product}>
-                            {children}
-                        </ProductCard>))}
+                    {isLoader ? <Skeleton /> :
+                        products.map((product, index) => (
+                            <ProductCard key={index} product={product}>
+                                {children}
+                            </ProductCard>))}
                 </div>
 
                 {button &&
