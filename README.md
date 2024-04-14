@@ -11,7 +11,7 @@
 ## Configuration
 - Add a `.env` file to the server directory.
 
-### Setup .env file
+### Setup `.env` file
 
 ```js
 PORT=...
