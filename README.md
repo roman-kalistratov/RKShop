@@ -9,7 +9,7 @@
 - Global state management with Redux
 
 ## Configuration
-- Add a `.env` file to the root directory.
+- Add a `.env` file to the server directory.
 
 ### Setup .env file
 
