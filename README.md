@@ -14,8 +14,8 @@
 ### Setup `.env` file
 
 ```js
-PORT=...
-MONGODB_URL=...
+PORT=5000
+MONGODB_URL="Your mongo connetction"
 TOKEN_ACCESS_SECRET=8hEnPGeoBqGUT6zksxt4G95gW+uMdzwe7EVaRnp0xRI=
 TOKEN_REFRESH_SECRET=8hEnPGeoBqGUT6zksxt4G95gW+uMdzp0xRI=
 TOKEN_RESET_PASSWORD_SECRET=8hEnPGeoBqGUT6zt4G95gW+ksxt4G95gW+uMdzp0xRI=
