@@ -1,7 +1,8 @@
 ## The project features include:
 
-- Tech stack: MERN + SASS + REDUX
+- Tech stack: MERN + SCSS + REDUX
 - User authentication and authorization using JWT tokens.
+- Forgot password, Password reset
 - Product search, filtering, adding to favorites.
 - Shopping cart.
 - Discount coupon upon checkout.
@@ -14,14 +15,24 @@
 
 ```js
 PORT=...
-MONGODB_URI=...
-JWT_SECRET=...
-NODE_ENV=development
+MONGODB_URL=...
+TOKEN_ACCESS_SECRET=8hEnPGeoBqGUT6zksxt4G95gW+uMdzwe7EVaRnp0xRI=
+TOKEN_REFRESH_SECRET=8hEnPGeoBqGUT6zksxt4G95gW+uMdzp0xRI=
+TOKEN_RESET_PASSWORD_SECRET=8hEnPGeoBqGUT6zt4G95gW+ksxt4G95gW+uMdzp0xRI=
+FAKE_STORE_URL=https://dummyjson.com
+
+SEND_GRID_API_KEY="Your key"
+SMTP_USER="Your email"
+SMTP_PASSWORD="Your password"
+API_URL=http://localhost:5000/api/v1
+CLIENT_URL=http://localhost:3000
+BASE_URL=http://localhost:5000
 ```
 
 ### Build and start the app
 server
 ```shell
+cd server
 npm install
 npm start
 ```
@@ -35,19 +46,20 @@ npm start
 [Create React App](https://create-react-app.dev/)<br>
 [Tailwindcss](https://tailwindcss.com/)<br>
 [Daisy UI](https://daisyui.com/)<br>
-[React Hot Toast](https://github.com/timolins/react-hot-toast#readme)<br>
+[React Toastify](https://github.com/fkhadra/react-toastify)<br>
 [Mongoose](https://mongoosejs.com/)<br>
 [ExpressJS](https://expressjs.com/)<br>
-[Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction)<br>
+[Redux](https://redux.js.org/)<br>
 [Formik](https://formik.org/)<br>
 [Axios](https://axios-http.com/)<br>
-[Socket.io](https://socket.io/)<br>
+[Sendgrid](https://sendgrid.com/)<br>
+[Fake Store Api](https://dummyjson.com/)<br>
 
 # Preview
-![mern-chat-app-s9eg onrender com_ (1)](https://github.com/roman-kalistratov/mern-chat-app/assets/80212286/87b85038-0d2a-4db1-8c92-79ec6455422e)
-![mern-chat-app-s9eg onrender com_](https://github.com/roman-kalistratov/mern-chat-app/assets/80212286/f977d0a0-08c6-4c7a-9931-3b7fb3b85dab)
-![mern-chat-app-s9eg onrender com_ (2)](https://github.com/roman-kalistratov/mern-chat-app/assets/80212286/1dc74ef9-26a8-4c93-aaad-01e6affcaae7)
-![mern-chat-app-s9eg onrender com_(Samsung Galaxy S8+) (1)](https://github.com/roman-kalistratov/mern-chat-app/assets/80212286/ae26d5e7-7088-4b5a-a973-ed4ebdab8979)
-![mern-chat-app-s9eg onrender com_(Samsung Galaxy S8+)](https://github.com/roman-kalistratov/mern-chat-app/assets/80212286/d50d0f14-954f-47af-8f09-5349b4a8fdcb)
+
+![rkshop-header](https://github.com/roman-kalistratov/RKShop/assets/80212286/e1874132-c1b7-49d3-8ca6-5df1683b4220)
+![rkshop-description (1)](https://github.com/roman-kalistratov/RKShop/assets/80212286/a749457c-8b44-47b7-b582-29a927347a3b)
+![rkshop-features](https://github.com/roman-kalistratov/RKShop/assets/80212286/1371d2c2-f7e9-4b83-af72-d87c8ea5be75)
+
 
 
