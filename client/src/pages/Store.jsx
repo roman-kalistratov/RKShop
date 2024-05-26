@@ -116,7 +116,7 @@ const Store = () => {
                   className={`${styles.listItem} ${
                     queryCategory === category && styles.active
                   }`}
-                  onClick={() => dispatch(setQueryCategory(category))}
+                  onClick={() => dispatch(setQueryCategory(category.slug))}
                 >
                   {category.slug}
                 </li>
