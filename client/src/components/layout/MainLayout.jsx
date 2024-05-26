@@ -1,18 +1,22 @@
-import React, { useEffect } from 'react'
-import { Outlet } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
-import { setCart, setListFavorites, setUser } from '../../redux/features/userSlice'
-import { toast } from 'react-toastify'
+import React, { useEffect } from "react";
+import { Outlet } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setCart,
+  setListFavorites,
+  setUser,
+} from "../../redux/features/userSlice";
+import { toast } from "react-toastify";
 
-import Header from '../common/Header'
-import Footer from '../common/Footer'
-import Navbar from '../common/Navbar'
-import GlobalLoading from '../common/GlobalLoading'
-import ScrollUp from '../common/ScrollUp'
-import CartSidebar from '../common/CartSidebar';
+import Header from "../common/Header";
+import Footer from "../common/Footer";
+import Navbar from "../common/Navbar";
+import GlobalLoading from "../common/GlobalLoading";
+import ScrollUp from "../common/ScrollUp";
+import CartSidebar from "../common/CartSidebar";
 
-import userApi from '../../api/modules/user.api';
-import favoriteApi from '../../api/modules/favorite.api'
+import userApi from "../../api/modules/user.api";
+import favoriteApi from "../../api/modules/favorite.api";
 
 const MainLayout = () => {
   const dispatch = useDispatch();
@@ -20,10 +24,9 @@ const MainLayout = () => {
 
   useEffect(() => {
     const authUser = async () => {
-
       const accessToken = localStorage.getItem("accessToken");
       if (accessToken) {
-        const { response, err } = await userApi.auth(user)
+        const { response, err } = await userApi.auth(user);
         if (response) dispatch(setUser(response));
         if (err) dispatch(setUser(null));
       }
@@ -56,7 +59,6 @@ const MainLayout = () => {
     }
   }, [dispatch, user]);
 
-
   return (
     <>
       {/* global loading */}
@@ -83,7 +85,7 @@ const MainLayout = () => {
         <Footer />
       </div>
     </>
-  )
-}
+  );
+};
 
-export default MainLayout
+export default MainLayout;

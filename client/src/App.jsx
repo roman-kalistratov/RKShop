@@ -21,7 +21,6 @@ const App = () => {
     dispatch(getCategories());
   }, [dispatch]);
 
-
   return (
     <>
       <ToastContainer
@@ -38,7 +37,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainLayout />}>
-            {routes.map((route, index) => (
+            {routes.map((route, index) =>
               route.index ? (
                 <Route
                   index
@@ -52,12 +51,11 @@ const App = () => {
                   element={<PageWrapper>{route.element}</PageWrapper>}
                 />
               )
-            ))}
+            )}
           </Route>
         </Routes>
       </BrowserRouter>
     </>
-
   );
 };
 

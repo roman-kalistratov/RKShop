@@ -5,7 +5,7 @@ export const getCategories = createAsyncThunk(
   "categories/getCategories",
   async (_, thunkAPI) => {
     try {
-      const res = await axios(`https://dummyjson.com/products/categories`);      
+      const res = await axios(`https://dummyjson.com/products/categories`);
       return res.data;
     } catch (err) {
       console.log(err);
@@ -18,12 +18,12 @@ const categoriesSlice = createSlice({
   name: "categories",
   initialState: {
     list: [],
-    queryCategory:''
+    queryCategory: "",
   },
   reducers: {
     setQueryCategory: (state, action) => {
       state.queryCategory = action.payload;
-    }
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(getCategories.pending, (state) => {
@@ -39,8 +39,6 @@ const categoriesSlice = createSlice({
   },
 });
 
-export const {
-  setQueryCategory
-} = categoriesSlice.actions;
+export const { setQueryCategory } = categoriesSlice.actions;
 
 export default categoriesSlice.reducer;
